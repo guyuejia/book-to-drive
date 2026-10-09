@@ -1,0 +1,32 @@
+# Telegram credentials and environment
+.env
+.env.*
+!.env.example
+
+# Google Drive OAuth credentials
+rclone.conf
+**/rclone.conf
+*.session
+*.session-journal
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+
+# Runtime files
+temp/
+tmp/
+logs/
+*.log
+*.db
+*.sqlite
+*.sqlite3
+
+# IDE / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

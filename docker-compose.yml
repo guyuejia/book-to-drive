@@ -1,0 +1,23 @@
+services:
+  book-to-drive:
+    build: ./app
+    container_name: book-to-drive
+    restart: unless-stopped
+
+    env_file:
+      - .env
+
+    environment:
+      RCLONE_CONFIG: /config/rclone/rclone.conf
+
+    volumes:
+      - /root/.config/rclone:/config/rclone:rw
+
+    security_opt:
+      - no-new-privileges:true
+
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
